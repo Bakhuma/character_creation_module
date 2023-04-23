@@ -2,8 +2,7 @@ from random import randint
 from graphic_arts.start_game_banner import run_screensaver
 
 def attack(char_name: str, char_class: str) -> str:
-    '''Вычисляет силу нанесённого уроза 
-    зависимо от выбранного пути силы.'''
+    """Вычисляет силу нанесённого уроза."""
     if char_class == 'warrior':
         return (f'{char_name} нанёс урон противнику равный '
                 f'{5 + randint(3, 5)}')
@@ -17,8 +16,7 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
-        '''Вычисляет силу заблокированного уроза 
-        зависимо от выбранного пути силы.'''
+    """Вычисляет силу заблокированного уроза."""
     if char_class == 'warrior':
         return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
     if char_class == 'mage':
@@ -29,7 +27,7 @@ def defence(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
-        '''Определяет суперсилу персонажа.'''
+    """Определяет суперсилу персонажа."""
     if char_class == 'warrior':
         return (f'{char_name} применил специальное умение «Выносливость '
                 f'{80 + 25}»')
@@ -41,7 +39,7 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
-        '''Начиниет тренировку.'''
+    """Начиниет тренировку."""
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -66,7 +64,7 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
-        '''Определяет путь силы.'''
+    """Определяет путь силы."""
     approve_choice = None
     char_class = None
     while approve_choice != 'y':
@@ -85,12 +83,13 @@ def choice_char_class() -> str:
             print('Лекарь — могущественный заклинатель. '
                   'Черпает силы из природы, веры и духов.')
         approve_choice: str = input('Нажми (Y), чтобы подтвердить выбор, '
-                               'или любую другую кнопку, '
-                               'чтобы выбрать другого персонажа ').lower()
+                                    'или любую другую кнопку, '
+                                    'чтобы выбрать другого персонажа ').lower()
     return char_class
 
 
 def main() -> None:
+    """Запускает игру."""
     run_screensaver()
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
